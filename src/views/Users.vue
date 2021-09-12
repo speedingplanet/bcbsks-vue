@@ -1,13 +1,17 @@
 <template>
-  <div class="row">
+  <section class="row">
     <div class="col">
-      <h2>Home</h2>
+      <h2>Users</h2>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+
 };
 </script>
+
+<style>
+
+</style>
