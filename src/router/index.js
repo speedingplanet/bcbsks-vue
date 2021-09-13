@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import demoRoutes from '../demos/demo-routes';
 import Home from '../views/Home.vue';
 import Demos from '../views/Demos.vue';
 import Users from '../views/Users.vue';
@@ -14,6 +15,7 @@ const routes = [
     path: '/demos',
     name: 'Demos',
     component: Demos,
+    children: demoRoutes,
   },
   {
     path: '/users',
