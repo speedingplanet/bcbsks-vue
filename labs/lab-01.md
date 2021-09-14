@@ -21,6 +21,8 @@ Run your tests and make sure they pass.
 
 Update `Greeter` to take a prop `user-name`. It should be a string, required, and have no default.
 
+Then, in `App`, pass a value (hard-coded or bound) into `user-name`. Check to make sure that it displays correctly. 
+
 **STOP HERE**
 
 ## Part 4: Testing Props
