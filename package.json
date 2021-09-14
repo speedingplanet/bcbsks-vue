@@ -17,6 +17,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.4",
     "@babel/eslint-plugin": "^7.14.5",
+    "@speedingplanet/rest-server": "^1.1.4",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/vue": "^6.4.2",
     "@vue/cli-plugin-babel": "~4.5.0",
