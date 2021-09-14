@@ -27,7 +27,7 @@ Then, in `App`, pass a value (hard-coded or bound) into `user-name`. Check to ma
 
 ## Part 4: Testing Props
 
-Update the tests for `Greeter`, including tests to ensure that the props show up correctly. Write the tests in both native and testing-library styles. After the lab, discuss which style we want to use going forward.
+Update the tests for `Greeter`, including tests to ensure that the props show up correctly. Write the tests in both vue/test-utils and testing-library/vue styles. After the lab, discuss which style we want to use going forward.
 
 **STOP HERE**
 
