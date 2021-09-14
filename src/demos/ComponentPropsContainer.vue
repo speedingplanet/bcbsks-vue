@@ -4,7 +4,7 @@
       <ComponentProps
         prop-one="value one"
         :prop-two="foo"
-        prop-three="value three"
+        :prop-three="3"
       />
     </div>
   </div>
