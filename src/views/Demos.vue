@@ -22,6 +22,11 @@
             Testable Component
           </router-link>
         </li>
+        <li>
+          <router-link :to="{name: 'ComponentProps'}">
+            Component Props
+          </router-link>
+        </li>
       </ul>
     </div>
     <div class="col">
