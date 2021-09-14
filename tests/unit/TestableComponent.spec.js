@@ -6,7 +6,7 @@ describe( 'Vue Test Utils / TestableComponent', () => {
   it( 'renders data.dynamicValue when passed', () => {
     const wrapper = shallowMount( TestableComponent );
     expect( wrapper.text() ).toMatch( 'dynamicValue' );
-    expect( wrapper.text() ).not.toMatch( 'foo' );
+    expect( wrapper.text() ).not.toMatch( 'bar' );
   } );
 } );
 
@@ -14,6 +14,6 @@ describe( 'Vue Testing Library / TestableComponent', () => {
   it( 'renders data.dynamicValue when passed', () => {
     const { getByText, queryByText } = render( TestableComponent );
     expect( getByText( /dynamicValue/ ) ).toBeInTheDocument();
-    expect( queryByText( 'foo' ) ).toBeNull();
+    expect( queryByText( 'bar' ) ).toBeNull();
   } );
 } );

@@ -6,6 +6,7 @@
         <li>The message is: {{ message }}</li>
         <li>
           Name: {{ person.firstName }} {{ person.lastName }}
+          <!-- Name: {{ person.firstName + ' ' + person.lastName }} -->
         </li>
         <li />
       </ul>

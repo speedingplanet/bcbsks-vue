@@ -6,6 +6,8 @@
       </div>
     </header>
     <hr>
+    <!-- Use the component -->
+    <Greeter />
     <nav class="row">
       <div class="col">
         <ul class="list-inline">
@@ -47,6 +49,18 @@
     <router-view />
   </main>
 </template>
+
+<script>
+// Import the component
+import Greeter from './components/Greeter.vue';
+
+export default {
+  // Register the component
+  components: {
+    Greeter,
+  },
+};
+</script>
 
 <style>
 .active {
