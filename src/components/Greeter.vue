@@ -1,10 +1,15 @@
 <template>
-  <h3>Good morning, John</h3>
+  <h3>Good morning, {{ userName }}</h3>
 </template>
 
 <script>
 export default {
-
+  props: {
+    userName: {
+      type: String,
+      required: true,
+    },
+  },
 };
 </script>
 

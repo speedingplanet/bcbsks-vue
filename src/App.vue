@@ -7,7 +7,8 @@
     </header>
     <hr>
     <!-- Use the component -->
-    <Greeter />
+    <!-- <Greeter user-name="Frank" /> -->
+    <Greeter :user-name="customUser" />
     <nav class="row">
       <div class="col">
         <ul class="list-inline">
@@ -58,6 +59,11 @@ export default {
   // Register the component
   components: {
     Greeter,
+  },
+  data() {
+    return {
+      customUser: 'Hector',
+    };
   },
 };
 </script>
