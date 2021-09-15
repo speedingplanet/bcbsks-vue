@@ -8,7 +8,8 @@
     <hr>
     <!-- Use the component -->
     <!-- <Greeter user-name="Frank" /> -->
-    <Greeter :user-name="customUser" />
+    <!-- <Greeter :user-name="customUser" /> -->
+    <Greeter />
     <nav class="row">
       <div class="col">
         <ul class="list-inline">

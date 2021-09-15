@@ -8,6 +8,7 @@ export default {
     userName: {
       type: String,
       required: true,
+      // default: 'user',
     },
   },
 };
