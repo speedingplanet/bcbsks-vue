@@ -2,23 +2,27 @@ import { mount } from '@vue/test-utils';
 import { render, fireEvent } from '@testing-library/vue';
 import EventHandler from '../../src/demos/EventHandler';
 
+// fdescribe == describe.only()
+// ftest == test.only()
 describe( 'EventHandler regular events', () => {
   test( 'vue/test-utils', async() => {
     const wrapper = mount( EventHandler );
+    const p = wrapper.find( '.buttonMsg' );
 
     // Always check your assumptions
-    expect( wrapper.find( '.buttonMsg' ).text() ).toContain( '0' );
+    expect( p.text() ).toContain( '0' );
     await wrapper.find( 'button.btn-primary' ).trigger( 'click' );
-    expect( wrapper.find( '.buttonMsg' ).text() ).toContain( '1' );
+    expect( p.text() ).toContain( '1' );
   } );
 
   test( 'testing-library/vue', async() => {
     const { getByText } = render( EventHandler );
     const button = getByText( 'Click me (method ref)' );
-    expect( getByText( /You clicked on the button/ ) ).toBeInTheDocument();
-    expect( getByText( /You clicked on the button/ ).textContent ).toMatch( /0/ );
+    const p = getByText( /You clicked on the button/ );
+    expect( p ).toBeInTheDocument();
+    expect( p.textContent ).toMatch( /0/ );
     await fireEvent.click( button );
-    expect( getByText( /You clicked on the button/ ).textContent ).toMatch( /1/ );
+    expect( p.textContent ).toMatch( /1/ );
   } );
 } );
 
@@ -49,13 +53,14 @@ describe( 'EventHandler custom event', () => {
   } );
 } );
 
-xdescribe( 'Spying on events', () => {
+// xdescribe == describe.skip()
+// xtest == test.skip()
+describe.skip( 'Spying on events', () => {
   test( 'Spying with vue/test-utils', async() => {
-    const spy = jest.fn();
-    const wrapper = mount( EventHandler, { listeners: { customEvent: spy } } );
-    expect( spy ).not.toHaveBeenCalled();
-    // wrapper.vm.$emit( 'customEvent' );
+    const wrapper = mount( EventHandler );
+    // jest.spyOn(wrapper.)
+    // expect( spy ).not.toHaveBeenCalled();
     await wrapper.find( 'button.btn-danger' ).trigger( 'click' );
-    expect( spy ).toHaveBeenCalled();
+    // expect( spy ).toHaveBeenCalled();
   } );
 } );

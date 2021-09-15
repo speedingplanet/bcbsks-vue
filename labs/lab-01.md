@@ -108,6 +108,6 @@ Replace `UserDetails` with `UserBrowser`. Try out the code to make sure it works
 
 **STOP HERE**
 
-## Part 9: Spying on custom events
+## Part 9: Testing custom events
 
-Write tests for `UserBrowser`. Spy on the custom events passed into `NextPrevious`. Make sure the event handlers are called appropriately. 
+Write tests for the custom events in `NextPrevious`. Make sure that you test the custom events 'nextRecord' and 'previousRecord'. 
