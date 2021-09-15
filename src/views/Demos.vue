@@ -27,6 +27,16 @@
             Component Props
           </router-link>
         </li>
+        <li>
+          <router-link :to="{name: 'EventHandler'}">
+            Event Handler
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'CustomEvent'}">
+            Custom Event
+          </router-link>
+        </li>
       </ul>
     </div>
     <div class="col">
