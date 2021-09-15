@@ -72,11 +72,15 @@ Create a component under the `components` folder `NextPrevious`. It should have 
 
 The component should take two props: `nextLabel` and `previousLabel`. They are strings, optional, and should have default values of "Next" and "Previous". Use these as the labels on the buttons.
 
-Attach event handlers to the buttons that activate on a button click. For this exercise, have the event handlers log to the console that they were clicked on.
+Attach event handlers to the buttons that activate on a button click. Add a paragraph below the buttons which changes its message to read "You clicked on the Next button" / "You clicked on the Previous button" as appropriate.
 
 **STOP HERE**
 
-## Part 7: Custom events
+## Part 7: Event Testing
+
+Write test cases to test the event handlers of `NextPrevious`. Use either vue/test-utils or testing-library/vue. 
+
+## Part 8: Custom events
 
 Setting up custom events.
 
@@ -102,3 +106,6 @@ Replace `UserDetails` with `UserBrowser`. Try out the code to make sure it works
 
 **STOP HERE**
 
+## Part 9: Spying on custom events
+
+Write tests for `UserBrowser`. Spy on the custom events passed into `NextPrevious`. Make sure the event handlers are called appropriately. 
