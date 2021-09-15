@@ -74,6 +74,8 @@ The component should take two props: `nextLabel` and `previousLabel`. They are s
 
 Attach event handlers to the buttons that activate on a button click. Add a paragraph below the buttons which changes its message to read "You clicked on the Next button" / "You clicked on the Previous button" as appropriate.
 
+Add the `NextPrevious` component to `Users` just under `UserDetails`. Don't forget to register the component. Check that it renders into the page. 
+
 **STOP HERE**
 
 ## Part 7: Event Testing

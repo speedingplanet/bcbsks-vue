@@ -7,6 +7,7 @@
   <div class="row">
     <div class="col-4 offset-4">
       <UserDetails :user="users[1]" />
+      <NextPrevious />
     </div>
   </div>
 </template>
@@ -14,9 +15,10 @@
 <script>
 import { users } from '@speedingplanet/rest-server';
 import UserDetails from '../users/UserDetails';
+import NextPrevious from '../components/NextPrevious';
 
 export default {
-  components: { UserDetails },
+  components: { UserDetails, NextPrevious },
   data() {
     return {
       users,
