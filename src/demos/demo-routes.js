@@ -4,8 +4,14 @@ import TestableComponent from './TestableComponent';
 import ComponentPropsContainer from './ComponentPropsContainer';
 import EventHandler from './EventHandler';
 import EventHandlerContainer from './EventHandlerContainer';
+import ConditionalRendering from './ConditionalRendering';
 
 const routes = [
+  {
+    path: 'conditional-rendering',
+    name: 'ConditionalRendering',
+    component: ConditionalRendering,
+  },
   {
     path: 'hello-world',
     name: 'HelloWorld',

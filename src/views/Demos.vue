@@ -37,6 +37,11 @@
             Custom Event
           </router-link>
         </li>
+        <li>
+          <router-link :to="{name: 'ConditionalRendering'}">
+            Conditional Rendering
+          </router-link>
+        </li>
       </ul>
     </div>
     <div class="col">
