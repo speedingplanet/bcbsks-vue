@@ -1,26 +1,11 @@
 <template>
-  <div
-    class="flex-header"
-    :style="{borderBottom: '2px black solid'}"
-  >
-    <div
-      v-for="column in columns"
-      :key="column.field"
-      class="flex-column-header"
-    >
-      {{ column.label }}
-    </div>
+  <div>
+    <!-- Content goes here (eventually) -->
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    columns: {
-      type: Array,
-      required: true,
-    },
-  },
 };
 </script>
 
