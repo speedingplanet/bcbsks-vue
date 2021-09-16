@@ -6,8 +6,14 @@ import EventHandler from './EventHandler';
 import EventHandlerContainer from './EventHandlerContainer';
 import ConditionalRendering from './ConditionalRendering';
 import ComputedValues from './ComputedValues';
+import CSSClassesAndStyles from './CSSClassesAndStyles';
 
 const routes = [
+  {
+    path: 'css-and-vue',
+    name: 'CSSClassesAndStyles',
+    component: CSSClassesAndStyles,
+  },
   {
     path: 'computed-values',
     name: 'ComputedValues',

@@ -5,7 +5,7 @@
     </div>
   </section>
   <div class="row">
-    <div class="col">
+    <div class="col-3">
       <ul class="list-unstyled">
         <li>
           <router-link :to="{name: 'HelloWorld'}">
@@ -45,6 +45,11 @@
         <li>
           <router-link :to="{name: 'ComputedValues'}">
             Computed Values
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'CSSClassesAndStyles'}">
+            CSS Classes and Styles
           </router-link>
         </li>
       </ul>
