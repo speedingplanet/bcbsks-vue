@@ -11,6 +11,7 @@
         <img
           :src="userImage"
           class="img-fluid"
+          :class="{'pt-3': isPerson}"
         >
       </div>
       <div class="col">
@@ -47,6 +48,9 @@ export default {
     },
   },
   computed: {
+    isPerson() {
+      return this.user.userType === 'person';
+    },
     userImage() {
       // user.userType === 'corporate' ? user.picture.medium : user.picture.large
       if ( this.user.userType === 'person' ) {
