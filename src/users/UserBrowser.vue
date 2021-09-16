@@ -1,7 +1,21 @@
 <template>
   <div class="row">
+    <div class="col text-center mb-2">
+      <button
+        class="btn btn-secondary"
+        @click="toggleShowPictures"
+      >
+        {{ showPicturesLabel }} Pictures
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col">
-      <UserDetails :user="users[currentUser]" />
+      <UserDetails
+        :user="users[currentUser]"
+        :show-picture="showPictures"
+      />
     </div>
   </div>
   <div class="row">
@@ -26,9 +40,19 @@ export default {
     return {
       users,
       currentUser: 0,
+      showPictures: true,
+      showPicturesLabel: 'Hide',
     };
   },
   methods: {
+    toggleShowPictures() {
+      this.showPictures = !this.showPictures;
+      if ( this.showPictures ) {
+        this.showPicturesLabel = 'Hide';
+      } else {
+        this.showPicturesLabel = 'Show';
+      }
+    },
     handleNext() {
       this.currentUser = Math.min( this.users.length - 1, this.currentUser + 1 );
     },
