@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="card-header bg-info">
+    <div class="card-header bg-info h4 text-center">
       {{ user.displayName }}
     </div>
     <ul class="list-group">
