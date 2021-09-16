@@ -5,17 +5,41 @@
     </div>
   </section>
   <div class="row">
-    <div class="col-6 offset-3">
-      <UserBrowser />
+    <div class="col">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <router-link :to="{name: 'NoUser'}">
+            Users Home
+          </router-link>
+        </li>
+        <li class="list-inline-item">
+          <router-link :to="{name: 'UserBrowser'}">
+            Browse
+          </router-link>
+        </li>
+        <li class="list-inline-item">
+          <router-link :to="{name: 'SearchUsers'}">
+            Search
+          </router-link>
+        </li>
+        <li class="list-inline-item">
+          <router-link :to="{name: 'ListUsers'}">
+            List
+          </router-link>
+        </li>
+        <li class="list-inline-item">
+          <router-link :to="{name: 'AddUser'}">
+            Add
+          </router-link>
+        </li>
+      </ul>
     </div>
   </div>
+  <router-view />
 </template>
 
 <script>
-import UserBrowser from '../users/UserBrowser';
-
 export default {
-  components: { UserBrowser },
 };
 </script>
 
