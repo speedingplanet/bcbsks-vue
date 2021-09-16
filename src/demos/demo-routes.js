@@ -8,8 +8,14 @@ import ConditionalRendering from './ConditionalRendering';
 import ComputedValues from './ComputedValues';
 import CSSClassesAndStyles from './CSSClassesAndStyles';
 import VModelDemo from './VModelDemo';
+import LoopingDemo from './LoopingDemo';
 
 const routes = [
+  {
+    path: 'looping-demo',
+    name: 'LoopingDemo',
+    component: LoopingDemo,
+  },
   {
     path: 'v-model-demo',
     name: 'VModelDemo',

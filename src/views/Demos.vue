@@ -57,6 +57,11 @@
             v-model demo
           </router-link>
         </li>
+        <li>
+          <router-link :to="{name: 'LoopingDemo'}">
+            v-for / looping demo
+          </router-link>
+        </li>
       </ul>
     </div>
     <div class="col">
