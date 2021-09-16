@@ -86,11 +86,11 @@ Write test cases to test the event handlers of `NextPrevious`. Use either vue/te
 
 Setting up custom events.
 
-## NextPrevious.vue
+### NextPrevious.vue
 
 Register two custom events `nextRecord` and `previousRecord`. Emit these events when the appropriate buttons are clicked on. 
 
-## users/UserBrowser.vue
+### users/UserBrowser.vue
 
 Create a new component `users/UserBrowser.vue`. It will wrap around `UserDetails` and `NextPrevious`. Import and register those two components. Add them to the `template` for `UserBrowser`. 
 
@@ -100,7 +100,7 @@ Add event handlers from `NextPrevious`'s `nextRecord` and `previousRecord` event
 
 Pass the selected user into `UserDetails`. 
 
-## Users.vue
+### Users.vue
 
 Remove the import of `users`.
 
