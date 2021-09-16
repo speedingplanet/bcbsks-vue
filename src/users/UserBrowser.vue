@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import UserDetails from './UserDetails';
+import UserDetails from './UserDetails.vue';
 import NextPrevious from '../components/NextPrevious';
 import { users } from '@speedingplanet/rest-server';
 export default {
