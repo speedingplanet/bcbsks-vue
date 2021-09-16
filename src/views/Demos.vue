@@ -42,6 +42,11 @@
             Conditional Rendering
           </router-link>
         </li>
+        <li>
+          <router-link :to="{name: 'ComputedValues'}">
+            Computed Values
+          </router-link>
+        </li>
       </ul>
     </div>
     <div class="col">

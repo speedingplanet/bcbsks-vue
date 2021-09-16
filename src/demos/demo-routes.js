@@ -5,8 +5,14 @@ import ComponentPropsContainer from './ComponentPropsContainer';
 import EventHandler from './EventHandler';
 import EventHandlerContainer from './EventHandlerContainer';
 import ConditionalRendering from './ConditionalRendering';
+import ComputedValues from './ComputedValues';
 
 const routes = [
+  {
+    path: 'computed-values',
+    name: 'ComputedValues',
+    component: ComputedValues,
+  },
   {
     path: 'conditional-rendering',
     name: 'ConditionalRendering',
