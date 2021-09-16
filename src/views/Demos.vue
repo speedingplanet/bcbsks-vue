@@ -52,6 +52,11 @@
             CSS Classes and Styles
           </router-link>
         </li>
+        <li>
+          <router-link :to="{name: 'VModelDemo'}">
+            v-model demo
+          </router-link>
+        </li>
       </ul>
     </div>
     <div class="col">

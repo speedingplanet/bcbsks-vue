@@ -7,8 +7,14 @@ import EventHandlerContainer from './EventHandlerContainer';
 import ConditionalRendering from './ConditionalRendering';
 import ComputedValues from './ComputedValues';
 import CSSClassesAndStyles from './CSSClassesAndStyles';
+import VModelDemo from './VModelDemo';
 
 const routes = [
+  {
+    path: 'v-model-demo',
+    name: 'VModelDemo',
+    component: VModelDemo,
+  },
   {
     path: 'css-and-vue',
     name: 'CSSClassesAndStyles',
