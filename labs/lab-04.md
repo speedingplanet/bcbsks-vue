@@ -19,6 +19,7 @@ const columns = [ {
 // ...
 ]; 
 ```
+The columns configuration should include `displayName`, `email`, `address.city`, `address.state`. 
 
 Add columns to the `data()` configuration. Pass it as a bound value to `:columns` on `DataGrid`. 
 
@@ -43,6 +44,8 @@ In the `template` block, add a div with the class `flex-header` and optionally, 
 Inside the `flex-header` div, add a child div with the class `flex-column-header`. Use `v-for` to iterate over the `columns` and print out a `div` for each column, using the field as the key, and the label as the display value. 
 
 Navigate to `ListUsers` in your browser. You should see a list of column headers with no data under them. To be continued. 
+
+**STOP HERE**
 
 ## Part 2: Actual data
 
