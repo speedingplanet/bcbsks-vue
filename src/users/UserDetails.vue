@@ -6,10 +6,10 @@
     <div class="row g-0">
       <div
         v-if="showPicture"
-        class="col-2 text-center"
+        class="col-4 text-center"
       >
         <img
-          :src="user.picture.large"
+          :src="userImage"
           class="img-fluid"
         >
       </div>
@@ -35,6 +35,7 @@
 
 <script>
 export default {
+
   props: {
     user: {
       type: Object,
@@ -43,6 +44,16 @@ export default {
     showPicture: {
       type: Boolean,
       default: true,
+    },
+  },
+  computed: {
+    userImage() {
+      // user.userType === 'corporate' ? user.picture.medium : user.picture.large
+      if ( this.user.userType === 'person' ) {
+        return this.user.picture.large;
+      } else {
+        return this.user.picture.medium;
+      }
     },
   },
 };

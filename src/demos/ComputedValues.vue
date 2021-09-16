@@ -30,6 +30,16 @@ export default {
       return this.firstName + ' ' + this.lastName;
     },
 
+    nameAndAddress: {
+      get() {
+        return this.firstName + ' ' + this.lastName +
+        ' living in ' + this.city + ', ' + this.state;
+      },
+      set( city ) {
+        this.city = city;
+      },
+    },
+
   },
 };
 </script>
