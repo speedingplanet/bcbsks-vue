@@ -84,7 +84,7 @@ In the row above `UserDetails`, replace the button with the following code:
   >No</label>
 </div>
 ```
-This should render out two checkboxes, "Yes" and "No". 
+This should render out two radio buttons, "Yes" and "No". 
 
 If you haven't already, add a property to `data()` called `showPictures`. Initialize it to boolean false. 
 
