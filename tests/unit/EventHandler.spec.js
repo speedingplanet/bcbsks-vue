@@ -52,15 +52,3 @@ describe( 'EventHandler custom event', () => {
     expect( emitted().customEvent.length ).toBe( 1 );
   } );
 } );
-
-// xdescribe == describe.skip()
-// xtest == test.skip()
-describe.skip( 'Spying on events', () => {
-  test( 'Spying with vue/test-utils', async() => {
-    const wrapper = mount( EventHandler );
-    // jest.spyOn(wrapper.)
-    // expect( spy ).not.toHaveBeenCalled();
-    await wrapper.find( 'button.btn-danger' ).trigger( 'click' );
-    // expect( spy ).toHaveBeenCalled();
-  } );
-} );

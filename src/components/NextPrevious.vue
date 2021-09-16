@@ -5,7 +5,7 @@
         class="btn btn-danger"
         @click="handlePrevious"
       >
-        Previous
+        {{ previousLabel }}
       </button>
     </div>
     <div class="col text-end">
@@ -13,30 +13,31 @@
         class="btn btn-success"
         @click="handleNext"
       >
-        Next
+        {{ nextLabel }}
       </button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col text-center">
-      <p>{{ message }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      message: '',
-    };
+  props: {
+    nextLabel: {
+      type: String,
+      default: 'Next',
+    },
+    previousLabel: {
+      type: String,
+      default: 'Previous',
+    },
   },
+  emits: [ 'nextRecord', 'previousRecord' ],
   methods: {
     handlePrevious() {
-      this.message = 'You clicked on the "Previous" button';
+      this.$emit( 'previousRecord' );
     },
     handleNext() {
-      this.message = 'You clicked on the "Next" button';
+      this.$emit( 'nextRecord' );
     },
   },
 };

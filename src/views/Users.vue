@@ -5,26 +5,17 @@
     </div>
   </section>
   <div class="row">
-    <div class="col-4 offset-4">
-      <UserDetails :user="users[1]" />
-      <NextPrevious />
+    <div class="col-6 offset-3">
+      <UserBrowser />
     </div>
   </div>
 </template>
 
 <script>
-import { users } from '@speedingplanet/rest-server';
-import UserDetails from '../users/UserDetails';
-import NextPrevious from '../components/NextPrevious';
+import UserBrowser from '../users/UserBrowser';
 
 export default {
-  components: { UserDetails, NextPrevious },
-  data() {
-    return {
-      users,
-    };
-  },
-
+  components: { UserBrowser },
 };
 </script>
 

@@ -7,9 +7,9 @@
     </header>
     <hr>
     <!-- Use the component -->
-    <!-- <Greeter user-name="Frank" /> -->
+    <Greeter user-name="John" />
     <!-- <Greeter :user-name="customUser" /> -->
-    <Greeter />
+    <!-- <Greeter /> -->
     <nav class="row">
       <div class="col">
         <ul class="list-inline">
