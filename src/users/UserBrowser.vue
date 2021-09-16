@@ -1,12 +1,36 @@
 <template>
   <div class="row">
-    <div class="col text-center mb-2">
-      <button
-        class="btn btn-secondary"
-        @click="toggleShowPictures"
-      >
-        {{ showPicturesLabel }} Pictures
-      </button>
+    <div class="col mb-2">
+      <span>Show pictures? </span>
+      <div class="form-check form-check-inline">
+        <input
+          id="showPicturesYes"
+          v-model="showPictures"
+          class="form-check-input"
+          :value="true"
+          type="radio"
+          name="showPictures"
+          checked
+        >
+        <label
+          class="form-check-label"
+          for="showPicturesYes"
+        >Yes</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          id="showPicturesNo"
+          v-model="showPictures"
+          class="form-check-input"
+          :value="false"
+          type="radio"
+          name="showPictures"
+        >
+        <label
+          class="form-check-label"
+          for="showPicturesNo"
+        >No</label>
+      </div>
     </div>
   </div>
 
@@ -41,18 +65,9 @@ export default {
       users,
       currentUser: 0,
       showPictures: true,
-      showPicturesLabel: 'Hide',
     };
   },
   methods: {
-    toggleShowPictures() {
-      this.showPictures = !this.showPictures;
-      if ( this.showPictures ) {
-        this.showPicturesLabel = 'Hide';
-      } else {
-        this.showPicturesLabel = 'Show';
-      }
-    },
     handleNext() {
       this.currentUser = Math.min( this.users.length - 1, this.currentUser + 1 );
     },
