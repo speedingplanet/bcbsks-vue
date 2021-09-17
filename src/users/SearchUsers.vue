@@ -54,17 +54,20 @@
         class="form-control"
       >
     </div>
-    <div class="col-2">
+    <div
+      v-if="searchLocation === 'remote'"
+      class="col-2"
+    >
       <button
-        v-show="searchLocation === 'remote'"
         class="btn btn-primary"
+        @click="handleRemoteSearch(searchText)"
       >
         Search
       </button>
     </div>
   </div>
   <div
-    v-show="searchText !== ''"
+    v-if="searchText !== ''"
     class="row mt-2"
   >
     <div class="col">
@@ -77,25 +80,21 @@
 </template>
 
 <script>
-import DataGrid from '../components/DataGrid.vue';
 import { dao } from '@speedingplanet/rest-server';
+import DataGrid from '../components/DataGrid.vue';
 
 const columns = [ {
   field: 'displayName',
   label: 'Name',
 },
-{
-  field: 'email',
-  label: 'E-mail',
-},
-];
+{ field: 'email', label: 'E-mail' } ];
 
 export default {
   components: { DataGrid },
   data() {
     return {
-      searchLocation: 'local',
       searchText: '',
+      searchLocation: 'local',
       users: [],
       columns,
     };
@@ -106,8 +105,30 @@ export default {
       return this.users.filter( user => searchRE.test( user.displayName ) );
     },
   },
+  watch: {
+    searchLocation( newSearchLocation, oldSearchLocation ) {
+      if ( newSearchLocation === 'remote' ) {
+        this.users = [];
+      }
+    },
+  },
   mounted() {
-    dao.findAllUsers().then( results => { this.users = results.data; } );
+    dao.findAllUsers().then( ( { data } ) => {
+      this.users = data;
+    } );
+  },
+  methods: {
+    handleRemoteSearch( searchText ) {
+      const params = new URLSearchParams( { displayName_like: searchText } );
+      fetch( `http://localhost:8000/api/zippay/v1/users?${params.toString()}` )
+        .then( response => response.json() )
+        // eslint-disable-next-line no-return-assign
+        .then( results => {
+          console.log( 'users: ', this.users );
+          console.log( 'results: ', results );
+          this.users = results;
+        } );
+    },
   },
 };
 </script>
