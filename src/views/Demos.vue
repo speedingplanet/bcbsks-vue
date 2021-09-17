@@ -62,6 +62,16 @@
             v-for / looping demo
           </router-link>
         </li>
+        <li>
+          <router-link :to="{name: 'AsyncDemo'}">
+            Asynchronous requests demo
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'LifecycleDemo'}">
+            Vue lifecycle
+          </router-link>
+        </li>
       </ul>
     </div>
     <div class="col">

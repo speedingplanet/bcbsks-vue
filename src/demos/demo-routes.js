@@ -9,8 +9,20 @@ import ComputedValues from './ComputedValues';
 import CSSClassesAndStyles from './CSSClassesAndStyles';
 import VModelDemo from './VModelDemo';
 import LoopingDemo from './LoopingDemo';
+import AsyncDemo from './AsyncDemo';
+import LifecycleDemo from './LifecycleDemo';
 
 const routes = [
+  {
+    path: 'lifecycle-demo',
+    name: 'LifecycleDemo',
+    component: LifecycleDemo,
+  },
+  {
+    path: 'async-demo',
+    name: 'AsyncDemo',
+    component: AsyncDemo,
+  },
   {
     path: 'looping-demo',
     name: 'LoopingDemo',
