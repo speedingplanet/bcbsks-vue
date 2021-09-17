@@ -3,7 +3,12 @@
     <!-- Content goes here (eventually) -->
     <div class="flex-container w-100">
       <DataGridHeader :columns="columns" />
-      <DataGridRow :columns="columns" />
+      <DataGridRow
+        v-for="record of records"
+        :key="record[idField]"
+        :columns="columns"
+        :record="record"
+      />
     </div>
   </div>
 </template>
@@ -22,6 +27,10 @@ export default {
     records: {
       type: Array,
       required: true,
+    },
+    idField: {
+      type: String,
+      default: 'id',
     },
   },
 };
