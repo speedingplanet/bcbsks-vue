@@ -6,7 +6,7 @@
         Payor {{ tx.payorId }} paid payee {{ tx.payeeId }}
         ${{ tx.amount }} on {{ tx.txDate }}.
       </p>
-      <p>
+      <p v-if="tx2 !== null">
         Payor {{ tx2.payorId }} paid payee {{ tx2.payeeId }}
         ${{ tx2.amount }} on {{ tx2.txDate }}.
       </p>
@@ -18,26 +18,20 @@
 import { dao } from '@speedingplanet/rest-server';
 
 export default {
-  props: {
-    txId: {
-      type: String,
-      default: '1',
-    },
-  },
   data() {
     return {
       tx: {},
-      tx2: {},
+      tx2: null,
     };
   },
   mounted() {
     // Using the DAO
-    dao.findTransactionById( this.txId ).then( ( { data } ) => {
-      this.tx = data;
+    dao.findTransactionById( '1' ).then( ( results ) => {
+      this.tx = results.data;
     } );
 
     // Using native fetch
-    const baseUrl = 'http://localhost:8000/api/zippay/v1/transactions/2';
+    const baseUrl = 'http://localhost:8000/api/zippay/v1/transactions/2?_delay=5000';
     fetch( baseUrl )
       .then( response => {
         if ( response.ok ) {
