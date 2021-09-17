@@ -4,7 +4,7 @@ import AddUser from './AddUser';
 import ListUsers from './ListUsers';
 const routes = [
   {
-    path: 'add',
+    path: 'list',
     component: ListUsers,
     name: 'ListUsers',
   },
