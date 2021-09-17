@@ -11,6 +11,8 @@
       :type="fieldType"
       class="form-control"
       :name="fieldName"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
     >
   </div>
 </template>
@@ -30,7 +32,13 @@ export default {
       type: String,
       required: true,
     },
+    modelValue: {
+      type: String,
+      default: '',
+    },
   },
+  emits: [ 'update:modelValue' ],
+
 };
 </script>
 
