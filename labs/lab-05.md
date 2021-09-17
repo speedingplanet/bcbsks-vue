@@ -8,9 +8,11 @@ We want to have `ListUsers` fetch data remotely.
 
 Open `ListUsers.vue`. Remove the import of 'users'. We will use `fetch` to fetch the data directly from the server.
 
-The URL to fetch from is http://localhost:8000/api/zippay/v1/users. Fetch from this URL during the `mounted` phase of the lifecyle. Parse the results as JSON, and then assign the results to the `users` property of the data array. Don't forget to `catch` any errors that might happen.
+The URL to fetch from is http://localhost:8000/api/zippay/v1/users. Fetch from this URL during the `mounted` phase of the lifecyle. Parse the results as JSON, and then assign the results to the `users` property of the `data` array. Don't forget to `catch` any errors that might happen.
 
 Visit `ListUsers` in your browser to verify that it is still working. You can look at the console or the network tabs in the developer tools to verify that a fetch request was made over the network.
+
+If you want to see a delay, change the URL to this: http://localhost:8000/api/zippay/v1/users?_delay=3000. The `_delay` value is in milliseconds.
 
 **STOP HERE**
 
@@ -118,3 +120,36 @@ Add an event handler to the search button, `handleRemoteSearch`. It should build
 Try searching remotely. You can look at the network tab in the dev tools to verify that you are connecting to the server and passing search params. 
 
 **STOP HERE**
+
+## Part 4: Building an AddUser form
+
+### components/TextInput.vue
+
+This is a reusable component for capturing input in a single-line text field. It's set up to take parameters to customize the text field itself, while using Bootstrap styling.
+
+It is missing v-model configuration, though. Since this is a component that will have a v-model passed to it, configure the text field's `:value` and `@input` events accordingly. Don't forget to add a corresponding `emits` configuration as well.
+
+### users/AddUser.vue
+
+Build out a form. Start with a `form` tag, with an event handler for `submit`. Make sure to prevent the default behavior on the `submit` event. The event handler can be a placeholder for now.
+
+In the `data()` property, add a `formState` object which will store the state of the form. You should use the following fields:
+
+- displayName
+- email
+- address.street
+- address.city
+- address.state
+- address.country
+- userType, defaulting to 'person'
+
+Add form fields for the following, using `TextInput` for implementation unless otherwise noted.
+
+- Name / displayName
+- E-mail / email
+- Street / address.street
+- City / address.city
+- State / address.state
+- Country / address.country / select drop-down with US, UK, Canada, and Mexico
+- User type / userType / radio button set
+
