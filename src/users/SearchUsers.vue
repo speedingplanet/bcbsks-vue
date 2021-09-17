@@ -101,6 +101,7 @@ export default {
   },
   computed: {
     filteredUsers() {
+      if ( this.searchLocation === 'remote' ) return this.users;
       const searchRE = new RegExp( this.searchText, 'i' );
       return this.users.filter( user => searchRE.test( user.displayName ) );
     },
