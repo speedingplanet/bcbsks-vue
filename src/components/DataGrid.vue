@@ -1,6 +1,9 @@
 <template>
   <div>
     <!-- Content goes here (eventually) -->
+    <div class="flex-container w-100">
+      <DataGridHeader :columns="columns" />
+    </div>
   </div>
 </template>
 
@@ -10,6 +13,12 @@ import DataGridRow from './DataGridRow.vue';
 export default {
   // eslint-disable-next-line vue/no-unused-components
   components: { DataGridHeader, DataGridRow },
+  props: {
+    columns: {
+      type: Array,
+      required: true,
+    },
+  },
 };
 </script>
 
