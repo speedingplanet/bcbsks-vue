@@ -80,6 +80,7 @@
       <div class="form-check">
         <input
           id="person"
+          v-model="formState.userType"
           class="form-check-input"
           type="radio"
           name="userType"
@@ -96,6 +97,7 @@
       <div class="form-check">
         <input
           id="corporation"
+          v-model="formState.userType"
           class="form-check-input"
           type="radio"
           name="userType"
@@ -113,9 +115,11 @@
       <button
         class="btn btn-success"
         type="submit"
+        :disabled="message !== ''"
       >
         Add User
       </button>
+      <p>{{ message }}</p>
     </div>
   </form>
 </template>
@@ -126,6 +130,7 @@ export default {
   components: { TextInput },
   data() {
     return {
+      message: '',
       formState: {
         displayName: '',
         email: '',
@@ -142,6 +147,28 @@ export default {
   methods: {
     handleSubmit() {
       console.log( 'Form data: ', this.formState );
+
+      fetch( 'http://localhost:8000/api/zippay/v1/users', {
+        method: 'POST',
+        body: JSON.stringify( this.formState ),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      } )
+        .then( response => {
+          if ( response.ok ) {
+            return response.json();
+          } else {
+            throw new Error( 'HTTP issue, returned ' + response.status );
+          }
+        } )
+        .then( results => {
+          this.message = 'User added, new id: ' + results.id;
+        } )
+        .catch( error => {
+          console.error( 'Problem adding a user:', error );
+        } )
+      ;
     },
   },
 };
