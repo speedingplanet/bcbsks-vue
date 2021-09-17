@@ -153,3 +153,23 @@ Add form fields for the following, using `TextInput` for implementation unless o
 - Country / address.country / select drop-down with US, UK, Canada, and Mexico
 - User type / userType / radio button set
 
+The directions above indicate the label and the v-model for each of the fields. 
+
+Add a button at the end, as a submit button. It will need to have `type="submit"`. 
+
+Finish the event handler for the `submit` event. It should log to the console the data in the `formState` object. This lets us verify that we are capturing all the data in the form in an accurate structure. 
+
+**STOP HERE**
+
+## Part 6: Adding a user
+
+When the form submits, disable the submit button, to prevent accidentally (or intentionally) submitting more than once. 
+
+Update the event handler for the form submission to actually add the user. Use `fetch` to point to http://localhost:8000/api/zippay/v1/users and submit the data in the form via the `POST` method. Don't forget to parse the data into a JSON string first. 
+
+When the fetch comes back, print out a message somewhere in AddUser, indicating that the user was successfully added. If there were any problems, print out a message saying that there was a problem.
+
+The user that returns has a unique ID. You should be able to use that to validate that the user was added corrently. Visit http://localhost:8000/api/zippay/v1/users/{id} (skipping the curly braces, just use the actual ID) to see the user that was created. 
+
+**STOP HERE**
+
