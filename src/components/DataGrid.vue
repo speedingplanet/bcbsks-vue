@@ -3,6 +3,7 @@
     <!-- Content goes here (eventually) -->
     <div class="flex-container w-100">
       <DataGridHeader :columns="columns" />
+      <DataGridRow :columns="columns" />
     </div>
   </div>
 </template>
@@ -15,6 +16,10 @@ export default {
   components: { DataGridHeader, DataGridRow },
   props: {
     columns: {
+      type: Array,
+      required: true,
+    },
+    records: {
       type: Array,
       required: true,
     },

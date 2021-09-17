@@ -51,6 +51,10 @@ Navigate to `ListUsers` in your browser. You should see a list of column headers
 
 Now we can render actual data!
 
+### components/DataGrid.vue
+
+Iterate over `records`. Use a `v-for` on `DataGridRow` for each record in `records`. 
+
 ### components/DataGridRow.vue
 
 Note that there is an already-defined `style` block.

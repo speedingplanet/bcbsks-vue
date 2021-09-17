@@ -6,12 +6,16 @@
   </div>
   <div class="row">
     <div class="col">
-      <DataGrid :columns="columns" />
+      <DataGrid
+        :columns="columns"
+        :records="users"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import { users } from '@speedingplanet/rest-server';
 import DataGrid from '../components/DataGrid.vue';
 const columns = [ {
   field: 'displayName',
@@ -36,6 +40,7 @@ export default {
   data() {
     return {
       columns,
+      users,
     };
   },
 };
