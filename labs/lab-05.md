@@ -23,7 +23,6 @@ SearchUsers should include live fetching as well. We will use `DataGrid` to disp
 Import `DataGrid` and register it as a `component`. 
 Build a `columns` config for `DataGrid`. The `displayName` and `email` fields are enough for now. 
 
-
 Update `data()` with the following properties: 
 
 - `searchLocation`, initialized to 'local'
