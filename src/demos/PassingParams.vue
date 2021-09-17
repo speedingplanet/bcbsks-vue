@@ -17,7 +17,6 @@
         :records="getResults"
       />
     </div>
-    <div class="col" />
   </div>
 </template>
 
@@ -45,6 +44,7 @@ export default {
     const baseUrl = 'http://localhost:8000/api/zippay/v1/transactions';
     const getParams = new URLSearchParams( { txDate_like: '2020-' } );
 
+    // fetch( baseUrl + '?' + getParams.toString() )
     fetch( `${baseUrl}?${getParams.toString()}` )
       .then( response => response.json() )
       // eslint-disable-next-line no-return-assign
